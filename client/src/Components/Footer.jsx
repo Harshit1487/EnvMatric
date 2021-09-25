@@ -11,7 +11,7 @@ function Footer() {
       <div className="footer container-fluid ">
         <div className="row">
           <div className="col-lg-4 col-md-4 col-sm-12 footerb">
-            <h1>Edu&nbsp;Vironment</h1>
+            <h1>Env_Matric</h1>
           </div>
           <div className="col-lg-4 col-md-4 col-sm-12 footerb1">
             <h1> LINKS </h1>
