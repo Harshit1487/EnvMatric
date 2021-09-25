@@ -23,9 +23,12 @@ function Header() {
               <LinkContainer to='/upload'><li>Upload Image</li></LinkContainer>
               <LinkContainer to='/wall'><li>Image Wall</li></LinkContainer>
               <LinkContainer to='/growplant'><li>Grow your Plant</li></LinkContainer>
+              <LinkContainer to='/forest'><li>Forest</li></LinkContainer>
+
               {isAuthenticated?(<li onClick={() => logout({ returnTo: window.location.origin })}>
       Logout
     </li>): (<li onClick={loginWithRedirect}>Login</li>) }
+    
             </ul>
           </div>
         </div>
