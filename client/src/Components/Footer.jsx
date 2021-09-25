@@ -16,10 +16,10 @@ function Footer() {
           <div className="col-lg-4 col-md-4 col-sm-12 footerb1">
             <h1> LINKS </h1>
             <ul>
-              <li>Link1</li>
-              <li>Link2</li>
-              <li>Link3</li>
-              <li>Link4</li>
+              <li>Upload Image</li>
+              <li>Image Wall</li>
+              <li>Grow Your Plant</li>
+              <li>Forest</li>
             </ul>
           </div>
           <div className="col-lg-4 col-md-4 col-sm-12 footerb2">

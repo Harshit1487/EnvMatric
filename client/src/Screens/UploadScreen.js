@@ -41,40 +41,85 @@ const UploadScreen = () => {
       <div className="Imagehead my-5 text-center">
         <h1>Upload a Photo</h1>
       </div>
-      <div className="container Formss">
-        <form onSubmit={handleSubmit} encType="multipart/form-data">
-          <input
-            type="text"
-            placeholder="name"
-            name="name"
-            value={newUser.name}
-            onChange={handleChange}
-          />
 
-          <input
-            type="date"
-            name="date"
-            value={newUser.date}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            name="description"
-            value={newUser.description}
-            placeholder="Enter Description"
-            onChange={handleChange}
-          />
+      <form onSubmit={handleSubmit} encType="multipart/form-data">
+        <div className="container-fluid Formss ">
+          <div className=" my-2 py-1 ">
+            <div className="row titlebox">
+              <div className="col-lg-6 col-sm-6  text-center titlehead">
+                <p>Title</p>
+              </div>
+              <div className="col-lg-6 col-sm-6 titleinp">
+                <input
+                  type="text"
+                  placeholder="name"
+                  name="name"
+                  value={newUser.name}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+          </div>
 
-          <input
-            type="file"
-            accept=".png, .jpg, .jpeg"
-            name="photo"
-            onChange={handlePhoto}
-          />
+          <div className="container my-5">
+            <div className="row">
+              <div className="col-lg-6 col-sm-6 titledesc text-center">
+                <p>Description</p>
+              </div>
+              <div className="col-lg-6 col-sm-6 titleinp px-0">
+                <textarea
+                  type="text"
+                  name="description"
+                  value={newUser.description}
+                  placeholder="Enter Description"
+                  onChange={handleChange}
+                  rows="3"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="container my-5">
+            <div className="row">
+              <div className="col-lg-6 col-sm-6 text-center uploadate">
+                <p> Date Of Report </p>
+              </div>
+              <div className="col-lg-6 col-sm-6 text-center">
+                <input
+                  type="date"
+                  name="date"
+                  value={newUser.date}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="container my-4">
+            <div className="row">
+              <div className="col-lg-6 col-sm-6 text-center uploadphoto">
+                <p>Uplaod A Image</p>
+              </div>
+
+              <div className="col-lg-6 col-sm-6 text-center">
+                <input
+                  type="file"
+                  accept=".png, .jpg, .jpeg"
+                  name="photo"
+                  onChange={handlePhoto}
+                />
+              </div>
+            </div>
+          </div>
+
+          
+          <div className="container col-sm-12 uploadbtn my-4 text-center">
 
           <input type="submit" />
-        </form>
-      </div>
+            </div>
+         
+        </div>
+      </form>
     </>
   );
 };

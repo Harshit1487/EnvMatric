@@ -34,7 +34,6 @@ function Header() {
         </div>
         <div className="headings1 ">
           <ul>
-            <li><i className="fa fa-search"></i> Search</li>
             <li>{user? <div>Hello {user.name}</div> : <div>Hello Site visitor</div>}</li>
           </ul>
         </div>
