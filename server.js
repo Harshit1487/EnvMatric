@@ -1,7 +1,7 @@
 const express =require('express')
 const apiRoutes =require('./routes/apiRoutes.js') 
 const dotenv =require('dotenv') 
-
+const dbConnect = require('./middlewares/db.js')
 //Initialising dotenv
 dotenv.config()
 
@@ -9,7 +9,8 @@ dotenv.config()
 const app = express()
 app.use(express.json())
 
-
+//db
+dbConnect();
 //Basic Routes
 app.use('/api', apiRoutes)
 

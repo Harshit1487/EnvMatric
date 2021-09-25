@@ -5,8 +5,9 @@ const UploadScreen = () => {
     const [newUser, setNewUser] = useState(
         {
             name: '',
-            birthdate: '',
             photo: '',
+            description: '',
+            date: ''
         }
     );
 
@@ -14,10 +15,11 @@ const UploadScreen = () => {
         e.preventDefault();
         const formData = new FormData();
         formData.append('photo', newUser.photo);
-        formData.append('birthdate', newUser.birthdate);
+        formData.append('date', newUser.date);
         formData.append('name', newUser.name);
+        formData.append('description', newUser.description);
 
-        axios.post('/api/add/', formData)
+        axios.post('/api/upload/', formData)
              .then(res => {
                 console.log(res);
              })
@@ -53,8 +55,15 @@ const UploadScreen = () => {
 
             <input 
                 type="date"
-                name="birthdate"
+                name="date"
                 value={newUser.date}
+                onChange={handleChange}
+            />
+            <input 
+                type="text"
+                name="description"
+                value={newUser.description}
+                placeholder="Enter Description"
                 onChange={handleChange}
             />
 
