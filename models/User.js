@@ -17,6 +17,10 @@ const userSchema = new Schema({
     },
     date: {
         type: String
+    },
+    upVotes:{
+        type:Number,
+        default: 0
     }
 });
 
