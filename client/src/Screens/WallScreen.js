@@ -1,6 +1,7 @@
 import React, {useEffect,useState} from 'react'
 import axios from 'axios'
 import {LinkContainer} from 'react-router-bootstrap'
+import {Card,Button} from 'react-bootstrap'
 const WallScreen = () => {
     useEffect( () =>{
         const fetchData = async ()=>{
@@ -21,12 +22,19 @@ const WallScreen = () => {
             <h2>Wall</h2>
             {data!==null? (data.map((post) => {
                 return (
-                <LinkContainer to={`/images/${post._id}`}><div>
-                    <h2>{post.name}</h2>
-                    <h2>{post.description}</h2>
-                    <h2>{post.date}</h2>
-                    <h2>{post.upVotes}</h2>
-                    </div></LinkContainer>)
+                
+                    <Card className="w-50 d-block mx-auto">
+                    <Card.Body>
+                    <Card.Title>{post.name}</Card.Title>
+                    <Card.Text>
+                    {post.description}
+                    </Card.Text>
+                    <Card.Text>{post.date}</Card.Text>
+                    <LinkContainer to={`/images/${post._id}`}><Button variant="primary">See Image</Button></LinkContainer>
+                    <Card.Text>{post.upVotes}</Card.Text>
+                    </Card.Body>
+                    </Card>
+                    )
                 
             })): <h3>Loading</h3>}               
         </div>

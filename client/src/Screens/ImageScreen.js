@@ -10,7 +10,6 @@ const ImageScreen = () => {
             const img = await Buffer.from(res.data, 'binary').toString('base64')
             console.log(res.data)
             setImage(img)
-            // console.log(buffer)
         }
         fetchImage()
     }, [])

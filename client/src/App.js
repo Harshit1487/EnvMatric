@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import UploadScreen from './Screens/UploadScreen';
 import WallScreen from './Screens/WallScreen';
 import ImageScreen from './Screens/ImageScreen';
+import GrowPlantScreen from './Screens/GrowPlantScreen/GrowPlantScreen';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <main>
       <Switch>
           <Route exact path='/' component={() => <Banner />} />
+          <Route exact path='/growplant' component={() => <GrowPlantScreen />} />
           <Route exact path='/wall' component={() => <WallScreen />} />
           <Route exact path='/upload' component={() => <UploadScreen />} />
           <Route exact path='/images/:id' component={() => <ImageScreen />} />
