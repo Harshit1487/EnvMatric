@@ -1,6 +1,6 @@
 const express =require('express') 
 const router = express.Router()
-const {uploadImage,getImages,wallData,clean} = require('../controllers/apiController.js')
+const {uploadImage,getImages,wallData,clean, addPost, fetchPosts} = require('../controllers/apiController.js')
 const multer = require('multer');
 const { v4: uuidv4 } = require('uuid');
 let path = require('path');
@@ -27,6 +27,9 @@ router.post('/upload',upload.single('photo'), uploadImage);
 router.get('/images/:id', getImages);
 router.get('/walldata', wallData);
 router.get('/clean/:id', clean);
+
+router.post('/add_post', addPost)
+router.get('/fetch_posts', fetchPosts)
 
 
 module.exports = router

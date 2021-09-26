@@ -8,6 +8,8 @@ import WallScreen from './Screens/WallScreen';
 import ImageScreen from './Screens/ImageScreen';
 import GrowPlantScreen from './Screens/GrowPlantScreen/GrowPlantScreen';
 import ForestScreen from './Screens/ForestScreen/ForestScreen';
+import AddPostScreen from './Screens/AddPostScreen';
+import BlogScreen from './Screens/BlogScreen/BlogScreen';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route exact path='/wall' component={() => <WallScreen />} />
           <Route exact path='/upload' component={() => <UploadScreen />} />
           <Route exact path='/forest' component={() => <ForestScreen />} />
+          <Route exact path='/addpost' component={() => <AddPostScreen />} />
+          <Route exact path='/blog' component={() => <BlogScreen />} />
           <Route exact path='/images/:id' component={() => <ImageScreen />} />
 
         </Switch>

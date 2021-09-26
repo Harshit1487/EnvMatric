@@ -1,5 +1,6 @@
 let User = require('../models/User.js');
 const path = require('path')
+const Post = require('../models/Post')
 
 exports.uploadImage = (req,res) =>{
     const name = req.body.name;
@@ -46,3 +47,29 @@ exports.clean = async(req,res) =>{
         res.status(404).send("Not Found")
     }
 }
+exports.addPost = async (req,res) =>{
+    
+    const { title, content } = req.body
+    Post.create(
+      {
+        title,
+        content,
+      },
+      (err, post) => {
+        if (err) {
+          return res.status(400).json({ message: 'Invalid post data' })
+        }
+        return res.status(201).json({ message: 'Post Added Successfuly' })
+      }
+    )
+  }
+  exports.fetchPosts = async (req,res) =>{
+      
+    try {
+      const posts = await Post.find({}).sort({ createdAt: -1 })
+      // console.log(posts)
+      return res.status(201).send(posts)
+    } catch (err) {
+      return res.status(404).json({ message: 'No Post Found' })
+    }
+  }
