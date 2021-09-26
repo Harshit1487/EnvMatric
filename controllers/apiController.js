@@ -82,3 +82,20 @@ exports.addPost = async (req,res) =>{
       return res.status(404).json({ message: 'No Post Found' })
     }
   }
+
+  exports.sendmsg = async (req,res) =>{
+  const accountSid = process.env.accountSid;
+  const authToken = process.env.authToken;
+  const client = require('twilio')(accountSid, authToken);
+  const {phone,message}= req.body;
+  client.messages
+  .create({
+     body: message,
+     from: '+15187206078',
+     to: phone
+   })
+  .then(message =>{
+    console.log(message)
+    res.status(200).send("Message sent")
+  } );
+  }

@@ -1,6 +1,6 @@
 const express =require('express') 
 const router = express.Router()
-const {uploadImage,getImages,wallData,clean, addPost, fetchPosts,upvote} = require('../controllers/apiController.js')
+const {uploadImage,getImages,wallData,clean, addPost, fetchPosts,upvote,sendmsg} = require('../controllers/apiController.js')
 const multer = require('multer');
 const { v4: uuidv4 } = require('uuid');
 let path = require('path');
@@ -31,6 +31,7 @@ router.get('/upvote/:id', upvote);
 
 router.post('/add_post', addPost)
 router.get('/fetch_posts', fetchPosts)
+router.post('/sendmsg', sendmsg)
 
 
 module.exports = router

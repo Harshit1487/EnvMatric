@@ -10,6 +10,7 @@ import GrowPlantScreen from './Screens/GrowPlantScreen/GrowPlantScreen';
 import ForestScreen from './Screens/ForestScreen/ForestScreen';
 import AddPostScreen from './Screens/AddPostScreen';
 import BlogScreen from './Screens/BlogScreen/BlogScreen';
+import MotivateFriendScreen from './Screens/MotivateFriendScreen/MotivateFriendScreen';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
             
 
           <Route exact path='/wall' component={() => <WallScreen />} />
+          <Route exact path='/motivate' component={() => <MotivateFriendScreen />} />
           
           <Route exact path='/forest' component={() => <ForestScreen />} />
           <Route exact path='/addpost' component={() => <AddPostScreen />} />
