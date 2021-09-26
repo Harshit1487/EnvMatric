@@ -21,7 +21,7 @@ const WallScreen = () => {
   return (
     <div className="container ">
       <h2 className="container appreaciate text-center my-5">
-        Wall Of Appreciation
+        Wall Of Cleanliness
       </h2>
       {data !== null ? (
         data.map((post) => {
@@ -47,7 +47,7 @@ const WallScreen = () => {
                     </div>
 
                     <div className="upvotes my-3">
-                      <p>Upvote By &nbsp; <span>{post.upVotes}</span></p>
+                      <p>Upvoted By &nbsp; <span>{post.upVotes}</span></p>
                     </div>
                     <div className="col-sm-12 postdesc">
                       {post.isClean? (<p>The Place is Cleaned</p> ): <p>The Place is not Cleaned yet</p>}

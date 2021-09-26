@@ -47,6 +47,15 @@ exports.clean = async(req,res) =>{
         res.status(404).send("Not Found")
     }
 }
+exports.upvote = async(req,res) =>{
+    try{
+        const id = req.params.id
+        let upd = await User.findOneAndUpdate({_id: id}, { $inc: {'upVotes': 1 } });
+        res.status(200).send("Updated")
+    } catch(err){
+        res.status(404).send("Not Found")
+    }
+}
 exports.addPost = async (req,res) =>{
     
     const { title, content } = req.body

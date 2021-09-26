@@ -24,7 +24,6 @@
 }
 
 .arcard{
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     height: 550px;
     padding: 0!important;
 }
@@ -57,4 +56,7 @@
     font-weight: bold;
     text-transform: uppercase;
     
+}
+.nolink{
+    text-decoration: none;
 }
