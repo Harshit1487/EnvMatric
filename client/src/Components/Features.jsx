@@ -3,8 +3,9 @@ import {LinkContainer} from 'react-router-bootstrap'
 function Features() {
   return (
     <div className="Featurelist">
-
-      <h1>Unique in Our Website</h1>
+      <div className="Featurehead">
+      <h1 className="featureh1">Unique in Our Website</h1>
+      </div>
       
       <div className="line1 my-3 py-5">
         <div class="card1">
@@ -33,7 +34,7 @@ function Features() {
 
         <div class="card1">
           <h1>05</h1>
-          <p>Upcoming !!</p>
+          <p>Blogs !!</p>
         </div>
        
 

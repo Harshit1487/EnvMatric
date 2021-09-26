@@ -151,3 +151,15 @@
 .card1:hover{
     color: white;
 }
+
+.Featurehead{
+    width: 100%;
+    text-align: center;
+}
+
+
+.featureh1{
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid rgba(55, 148, 49);
+}

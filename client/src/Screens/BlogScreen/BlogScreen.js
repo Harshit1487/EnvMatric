@@ -4,6 +4,7 @@ import Pagination from '../../Components/Pagination'
 import axios from 'axios'
 import { LinkContainer } from 'react-router-bootstrap'
 import {Button} from 'react-bootstrap'
+import './Blogscreen.css'
 const BlogScreen = () => {
 
   const [posts, setPosts] = useState([])
@@ -38,8 +39,8 @@ const BlogScreen = () => {
 
   return (
     <div >
-      <LinkContainer to="/addpost"><Button variant="primary" className="d-block mx-auto w-25 my-5">Add Post</Button></LinkContainer>
-      <div className='px-5 posts'>
+      <LinkContainer to="/addpost"><Button variant="bg-success" className="d-block addpostss mx-auto w-25 my-5">Add Post</Button></LinkContainer>
+      <div className='posts'>
           
           {posts === null ? (
             <h2>Loading...</h2>
@@ -64,4 +65,4 @@ const BlogScreen = () => {
   )
 }
 
-export default BlogScreen
+export default BlogScreen;
