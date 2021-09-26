@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./CSS/Imageupload.css";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const UploadScreen = () => {
   const [newUser, setNewUser] = useState({
@@ -39,10 +40,14 @@ const UploadScreen = () => {
   const handlePhoto = (e) => {
     setNewUser({ ...newUser, photo: e.target.files[0] });
   };
+  const {isAuthenticated, loginWithRedirect} = useAuth0();
 
   return (
     <>
-      <div className="Imagehead my-5 text-center">
+    {
+      isAuthenticated? (
+        <div>
+           <div className="Imagehead my-5 text-center">
         <h1>Upload a Photo</h1>
       </div>
 
@@ -145,6 +150,11 @@ const UploadScreen = () => {
          
         </div>
       </form>
+        </div>
+      ): loginWithRedirect()
+      
+    }
+     
     </>
   );
 };

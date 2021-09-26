@@ -12,6 +12,7 @@ import AddPostScreen from './Screens/AddPostScreen';
 import BlogScreen from './Screens/BlogScreen/BlogScreen';
 
 function App() {
+
   return (
     <div className="App">
       <Router>
@@ -20,8 +21,11 @@ function App() {
       <Switch>
           <Route exact path='/' component={() => <Banner />} />
           <Route exact path='/growplant' component={() => <GrowPlantScreen />} />
+          <Route exact path='/upload' component={() => <UploadScreen />} />:
+            
+
           <Route exact path='/wall' component={() => <WallScreen />} />
-          <Route exact path='/upload' component={() => <UploadScreen />} />
+          
           <Route exact path='/forest' component={() => <ForestScreen />} />
           <Route exact path='/addpost' component={() => <AddPostScreen />} />
           <Route exact path='/blog' component={() => <BlogScreen />} />
