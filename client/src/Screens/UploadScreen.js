@@ -8,15 +8,19 @@ const UploadScreen = () => {
     photo: "",
     description: "",
     date: "",
+    location:""
   });
+  const [isSubmit,setIsSubmit] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsSubmit(true);
     const formData = new FormData();
     formData.append("photo", newUser.photo);
     formData.append("date", newUser.date);
     formData.append("name", newUser.name);
     formData.append("description", newUser.description);
+    formData.append("location",newUser.location)
 
     axios
       .post("/api/upload/", formData)
@@ -78,6 +82,23 @@ const UploadScreen = () => {
               </div>
             </div>
           </div>
+          <div className="container my-5">
+            <div className="row">
+              <div className="col-lg-6 col-sm-6 titledesc text-center">
+                <p>Location</p>
+              </div>
+              <div className="col-lg-6 col-sm-6 titleinp px-0">
+                <textarea
+                  type="text"
+                  name="location"
+                  value={newUser.location}
+                  placeholder="Enter Location"
+                  onChange={handleChange}
+                  rows="3"
+                />
+              </div>
+            </div>
+          </div>
 
           <div className="container my-5">
             <div className="row">
@@ -98,7 +119,7 @@ const UploadScreen = () => {
           <div className="container my-4">
             <div className="row">
               <div className="col-lg-6 col-sm-6 text-center uploadphoto">
-                <p>Uplaod A Image</p>
+                <p>Upload An Image</p>
               </div>
 
               <div className="col-lg-6 col-sm-6 text-center">
@@ -117,6 +138,10 @@ const UploadScreen = () => {
 
           <input type="submit" />
             </div>
+          {isSubmit? <div>
+            <h2>Your form has been Submitted!</h2>
+          </div>: null }
+          
          
         </div>
       </form>

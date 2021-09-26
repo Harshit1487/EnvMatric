@@ -27,18 +27,6 @@ const WallScreen = () => {
         data.map((post) => {
           return (
             <>
-              {/* <Card className="w-50 d-block mx-auto">
-                    <Card.Body>
-                    <Card.Title>{post.name}</Card.Title>
-                    <Card.Text>
-                    {post.description}
-                    </Card.Text>
-                    <Card.Text>{post.date}</Card.Text>
-                    <LinkContainer to={`/images/${post._id}`}><Button variant="primary">See Image</Button></LinkContainer>
-                    <Card.Text>{post.upVotes}</Card.Text>
-                    </Card.Body>
-                    </Card> */}
-
               <LinkContainer to={`/images/${post._id}`}>
                 <div className="container my-5 wallbox ">
                   <div className="row">
@@ -54,9 +42,15 @@ const WallScreen = () => {
                     <div className="col-sm-12 postdesc">
                       <p>{post.description}</p>
                     </div>
+                    <div className="col-sm-12 postdesc">
+                      <p>Location: {post.location}</p>
+                    </div>
 
                     <div className="upvotes my-3">
                       <p>Upvote By &nbsp; <span>{post.upVotes}</span></p>
+                    </div>
+                    <div className="col-sm-12 postdesc">
+                      {post.isClean? (<p>The Place is Cleaned</p> ): <p>The Place is not Cleaned yet</p>}
                     </div>
 
                     <div className=" container text-center">

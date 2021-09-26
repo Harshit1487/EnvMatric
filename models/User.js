@@ -18,9 +18,16 @@ const userSchema = new Schema({
     date: {
         type: String
     },
+    location:{
+        type:String,
+    },
     upVotes:{
         type:Number,
         default: 0
+    },
+    isClean:{
+        type: Boolean,
+        default: false,
     }
 });
 

@@ -6,9 +6,9 @@ exports.uploadImage = (req,res) =>{
     const description = req.body.description;
     const date=req.body.date;
     const photo = req.file.filename;
-
+    const location=req.body.location
     const newUserData = {
-        name,photo,description,date
+        name,photo,description,date,location
     }
 
     const newUser = new User(newUserData);
@@ -16,13 +16,11 @@ exports.uploadImage = (req,res) =>{
     newUser.save()
            .then(() => res.json('User Added'))
            .catch(err => res.status(400).json('Error: ' + err));
-    console.log("hello");
 }
 exports.getImages = (req,res) =>{
     const id = req.params.id
     User.find({_id: id}, function(err, docs) {
         if (!err) { 
-            console.log(docs[0].photo);
             res.sendFile(path.resolve('images',`${docs[0].photo}`))
         }
         else {
@@ -38,4 +36,13 @@ exports.wallData = async (req,res) =>{
         res.status(404).send("No Wall Data Found")
     }
     
+}
+exports.clean = async(req,res) =>{
+    try{
+        const id = req.params.id
+        let upd = await User.findOneAndUpdate({_id: id}, {isClean: true});
+        res.status(200).send("Updated")
+    } catch(err){
+        res.status(404).send("Not Found")
+    }
 }
