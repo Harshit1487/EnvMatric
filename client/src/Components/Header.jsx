@@ -26,6 +26,10 @@ function Header() {
               <LinkContainer to='/forest'><li>Forest</li></LinkContainer>
               <LinkContainer to='/blog'><li>Blog</li></LinkContainer>
               <LinkContainer to='/motivate'><li>Motivate your Friend</li></LinkContainer>
+              
+              <LinkContainer to='/userdetails'><li>User Details</li></LinkContainer>
+              <LinkContainer to='/municipalregister'><li>Municipal Register</li></LinkContainer>
+              <LinkContainer to='/municipallogin'><li>Municipal Login</li></LinkContainer>
 
               {isAuthenticated?(<li onClick={() => logout({ returnTo: window.location.origin })}>
       Logout
