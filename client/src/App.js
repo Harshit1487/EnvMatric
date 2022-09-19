@@ -11,6 +11,9 @@ import ForestScreen from './Screens/ForestScreen/ForestScreen';
 import AddPostScreen from './Screens/AddPostScreen';
 import BlogScreen from './Screens/BlogScreen/BlogScreen';
 import MotivateFriendScreen from './Screens/MotivateFriendScreen/MotivateFriendScreen';
+import UserDetails from './Screens/UserDetails';
+import MunicipalRegister from './Screens/MunicipalRegister';
+import MunicipalLogin from './Screens/MunicipalLogin';
 
 function App() {
 
@@ -32,6 +35,10 @@ function App() {
           <Route exact path='/addpost' component={() => <AddPostScreen />} />
           <Route exact path='/blog' component={() => <BlogScreen />} />
           <Route exact path='/images/:id' component={() => <ImageScreen />} />
+  
+          <Route exact path='/userdetails' component={() => <UserDetails />} />
+          <Route exact path='/municipalregister' component={() => <MunicipalRegister />} />
+          <Route exact path='/municipallogin' component={() => <MunicipalLogin />} />
 
         </Switch>
       </main>
